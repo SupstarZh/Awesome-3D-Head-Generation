@@ -59,8 +59,8 @@
 
 **To Do**
 
-- [] 2D Datasets
-- [] Unconditional 3D Generation
-- [] short description for each paper
-- [] publication year of each paper
-- [] ...
+- [ ] 2D Datasets
+- [ ] Unconditional 3D Generation
+- [ ] short description for each paper
+- [ ] publication year of each paper
+- [ ] ...
