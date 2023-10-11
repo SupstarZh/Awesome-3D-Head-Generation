@@ -1,131 +1,66 @@
-# awesome-3D-Object-Generation
+# Awesome-3D-Head-Generation
 
-## Contents
+> An awesome list of 3D Head Generation papers, code, datasets and other resources.
 
-* <a href = "1">3D 数据表征</a>
-  * <a href = "1.1">Voxel-based representation</a>
-  * <a href = "1.2">Point Cloud-based representation</a>
-  * <a href = "1.3">SDF-based representation</a>
-  * <a href = "1.4">NeRF-based representation</a>
+> Due to my limited ability, there may be errors and omissions in the following content. If you have any comments, please raise an issue. Thank you for your support.
 
-* <a href = "2">通用物体生成</a>
-  * <a href = "2.1">Unconditional 3D Generation</a>
-  * <a href = "2.2">Text to 3D</a>
-  * <a href = "2.3">3D Reconstruction</a>
-  * <a href = "2.4">3D Editing</a>
----
 
-## 1 <span id="1">3D 数据表征</span>
-### 1.1 <span id="1.1">Voxel-based representation</span>
-  Voxel-based适合表示任意形状的实体模型，但数据量庞大并且曲面不够精细光滑，且细节程度受体素分辨率限制，较难表示平滑曲面，对硬件要求高。通常与其他如网格、隐式函数等结合使用。
-### 1.2 <span id="1.2">Point Cloud-based representation</span>
-  点云直观反应物体表面，保留了最原始的3D采样数据。但需要进行进一步的处理来生成网格或提取信息。缺点：点分布不均匀，密集区域点过多，无法直观表示拓扑结构。
-### 1.3 <span id="1.3">SDF-based representation</span>
-  可以精确无缝的表示物体的表面轮廓，对物体内部结构建模较为方便。缺点在于生成表面时运算量大，表示拓扑结构较为复杂，难以直接应用现有数据等等。
-### 1.4 <span id="1.4">NeRF-based representation</span>
-  NeRF是从图像中学习生成精细的3D形状，并且只需要存储网络参数，数据量小。但缺点在于，NeRF需要大量图像进行训练，计算量巨大，对训练数据需求高，容易过拟合，并且很难表示静止的准确几何结构，无法显式编辑模型。
+## 1 Datasets
 
-## 2 通用物体生成
+- **3D Datasets**
+  - [DAD-3DHeads](https://github.com/PinataFarms/DAD-3DHeads)
+  - [flame-fitting](https://github.com/TimoBolkart/FLAME-Universe)
 
-### 2.1 <span id="2.1">Unconditional 3D Generation</span>
-
-    - 3D Shape Generation and Completion through Point-Voxel Diffusion
-  提出PVD，3D生成模型，通过PVCNN来预测每个step中，每个点的位移
-
+- **2D Datasets**
   
-    - Diffusion probabilistic models for 3d point cloud generation
-    提出DPM，3D生成模型，使用Normalization Flow模型编码Shape，训练条件概率模型，与上文差异在于DPM使用PointNet来预测噪声的均值
 
-    
-    - Score-Based Point Cloud Denoising
-    与DPM同一作者，通过将Score-based方法应用于3D点云上，指导每一次迭代的梯度方向
+## 2 Evaluation Metrics
 
-    
-    - 3DQD: Generalized Deep 3D Shape Prior via Part-Discretized Diffusion Process
+- **Geometric Error**
+- **Texture Error**
+- **Visual Quality**
+- [REALY](https://github.com/czh-98/REALY)
+    [REALY: Rethinking the Evaluation of 3D Face Reconstruction](https://arxiv.org/abs/2203.09729)
 
-    
-    - Diffusion-Based Signed Distance Fields for 3D Shape Generation
-    提出SDF-Diffusion模型，基于voxel-shaped SDF representation，包含diffusion-based SDF generation model用来生成低分辨率3D模型，一个diffusion-based SDF superresolution model，将低分辨率模型变成高分辨率模型
+## 3 Papers & Codes
 
-    
-    - Diffusion-SDF: Text-to-Shape via Voxelized Diffusion
-    提出DIffusion-SDF模型，首先训练一个Auto-Encoder用于学习体素化TSDF的patch-independent的正态分布表示。然后提出了体素化扩散框架与UinU-Net降噪器来生成形状表示
+### 3.1 Unconditional 3D Generation
 
-    
-    - Fast Point Cloud Generation with Straight Flows
-    将recfiled flow应用到点云生成模型中，通过学习，采样，再学习，蒸馏四步，建立一个一步采样的点云生成模型
+### 3.2 Text to 3D
 
-    
-    - MeshDiffusion: Score-based Generative 3D Mesh Modeling
-    第一篇使用diffusion模型做基于meshes的无条件3D生成
-
-    
-    - 
-    - 
-      
-### 2.2 <span id="2.2">Text to 3D</span>
-    - DreamField: Zero-Shot Text-Guided Object Generation with Dream Fields
-  使用CLIP监督引导NeRF渲染的图像与文本描述尽可能接近
-
-  
-    - DreamFusion: Text-to-3D using 2D Diffusion
-    使用Diffusion代替CLIP，提出了SDS损失，用于从2D文生图模型中采样3D模型
-
-    
-    - Optimized-based methods (NeRF)
-
-    
-    - Learning-based methods 
-    Image 
-    
-    - 
-
-### 2.3 <span id="2.3">3D Reconstruction</span>
-
-  - 基于NeRF：
-    - Make-It-3D: High-Fidelity 3D Creation from A Single Image with Diffusion Prior
-
-    
-    - Magic123: One Image to High-Quality 3D Object Generation Using Both 2D and 3D Diffusion Priors
-    提出了Magic123，一个重建+超分的两阶段模型。使用2D和3D先验来实现单图重建功能。2D先验有利于控制模型生成的丰富度，3D先验有利于控制形状细节。相比于Zero123的重建过程，引入了2D的监督
+- [HeadSculpt: Crafting 3D Head Avatars with Text](https://arxiv.org/abs/2306.03038)
+  - [Repository](https://github.com/BrandonHanx/HeadSculpt)
 
 
-    - $PC^2$: Projection-Conditioned Point Cloud Diffusion for Single-Image 3D Reconstruction
-    使用生成模型做单图重建，在每个steps中，将图像特征投射到点云上，再将这一步生成的点云投射到图像上，做监督。之后提出了两个过滤器来提升性能，分别对应于有监督信号的情况和没有监督信号的情况。
+### 3.3 3D Reconstruction
+
+- [PanoHead: Geometry-Aware 3D Full-Head Synthesis in 360∘](https://arxiv.org/abs/2303.13071)
+  - [Repository](https://github.com/SizheAn/PanoHead)
+
+- [AvatarMAV: Fast 3D Head Avatar Reconstruction Using Motion-Aware Neural Voxels](https://arxiv.org/abs/2211.13206)
+  - [Repository](https://github.com/YuelangX/AvatarMAV)
+  - [Project Page](https://liuyebin.com/avatarmav/)
+
+### 3.4 3D Editing
+
+- [Next3D: Generative Neural Texture Rasterization for 3D-Aware Head Avatars](https://arxiv.org/abs/2211.11208)
+  - [Repository](https://github.com/MrTornado24/Next3D)
+  - [Project Page](https://mrtornado24.github.io/Next3D/)
 
 
-    - CCD-3DR: Consistent Conditioning in Diffusion for Single-Image 3D Reconstruction
-    提出Centered denoising Diffusion Probabilistic Model(CDPM)，用于解决PC2中扩散过程中，点云模型中心偏移导致的图像-3D模型特征不对齐问题，
+## 4 Supplementary Materials
 
+- [6D Rotation Representation For Unconstrained Head Pose Estimation](https://arxiv.org/abs/2202.12555)
+  - [Official Pytorch Implementation](https://github.com/thohemp/6DRepNet)
 
-    - Zero-1-to-3: Zero-shot One Image to 3D Object
-    提出Zero-123模型，输入一张图像，使用latent-diffusion生成新视角的图像，可以使用产生的新视角图像输入NeRF中渲染出3D模型
-
-
-    - One-2-3-45: Any Single Image to 3D Mesh in 45 Seconds without Per-Shape Optimization
-   
-    - 
-
-### <span id="2.4">2.4 3D Editing</span>
-
+- [Repository: face-landmark-localization](https://github.com/qiexing/face-landmark-localization)
 
 ---
 
-## To Do
+**To Do**
 
-- [ ] Dataset
-- [ ] Evaluation Criteria
-
-- [ ] 3D Data Representation
-  - [ ] Voxel-based representation
-  - [ ] Point Cloud-based representation
-  - [ ] SDF-based representation
-  - [ ] NeRF-based representation
-
-- [ ] Generic object generation
-  - [ ] Unconditional 3D Generation
-  - [ ] Text to 3D
-  - [ ] 3D Reconstruction
-  - [ ] 3D Editing
-
-last update: 2023/10/3
+- [] 2D Datasets
+- [] Unconditional 3D Generation
+- [] short description for each paper
+- [] publication year of each paper
+- [] ...
