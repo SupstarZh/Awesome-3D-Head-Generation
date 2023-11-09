@@ -1,26 +1,29 @@
-# Awesome 3D Head Generation
+# Awesome 3D Head&Face Generation
 
-> An awesome list of 3D head generation papers, code, datasets and other resources.
+> An awesome list of 3D head&face generation papers, code, datasets and other resources.
 
 > Due to my limited ability, there may be errors and omissions in the following content. If you have any comments, please raise an issue. Thank you for your support.
 
 
 ## 1 Datasets
 
-- **3D Datasets**
-  - [DAD-3DHeads](https://github.com/PinataFarms/DAD-3DHeads)
-  - [flame-fitting](https://github.com/TimoBolkart/FLAME-Universe)
-
-- **2D Datasets**
+- DAD-3DHeads: A Large-scale Dense, Accurate and Diverse Dataset for 3D Head Alignment from a Single Image [CVPR 2022] [Paper](https://arxiv.org/abs/2204.03688) [Repository](https://github.com/PinataFarms/DAD-3DHeads)
   
+- FLAME Universe [Repository](https://github.com/TimoBolkart/FLAME-Universe)
+  a list of publicly available ressources such as code, datasets, and scientific papers for the FLAME 3D head model
+- Binghamton University Facial Expression [Page](https://www.cs.binghamton.edu/~lijun/Research/3DFE/3DFE_Analysis.html)
+  aiming to achieve a high rate of accuracy in identifying a wide range of facial expressions and emotions, with the ultimate goal of increasing the general understanding of facial behavior and 3D structure of facial expressions and emotions on a detailed level
+- University of Notre Dame Datasets [Page](https://cvrl.nd.edu/projects/data/#)
+- FaceSpace [CVPR 2020] [Paper](https://openaccess.thecvf.com/content_CVPR_2020/papers/Yang_FaceScape_A_Large-Scale_High_Quality_3D_Face_Dataset_and_Detailed_CVPR_2020_paper.pdf) [Repository](https://github.com/zhuhao-nju/facescape)
+  large-scale high-quality 3D face datasets, parametric models, docs and toolkits about 3D face related technology 
+
 
 ## 2 Evaluation Metrics
 
 - **Geometric Error**
 - **Texture Error**
 - **Visual Quality**
-- [REALY](https://github.com/czh-98/REALY)
-    [REALY: Rethinking the Evaluation of 3D Face Reconstruction](https://arxiv.org/abs/2203.09729)
+- REALY: Rethinking the Evaluation of 3D Face Reconstruction [Paper](https://arxiv.org/abs/2203.09729) [Repository](https://github.com/czh-98/REALY)
 
 ## 3 Papers & Codes
 
@@ -28,32 +31,24 @@
 
 ### 3.2 Text to 3D
 
-- [HeadSculpt: Crafting 3D Head Avatars with Text](https://arxiv.org/abs/2306.03038)
-  - [Repository](https://github.com/BrandonHanx/HeadSculpt)
-
+- HeadSculpt: Crafting 3D Head Avatars with Text [Paper](https://arxiv.org/abs/2306.03038)
 
 ### 3.3 3D Reconstruction
 
-- [PanoHead: Geometry-Aware 3D Full-Head Synthesis in 360∘](https://arxiv.org/abs/2303.13071)
-  - [Repository](https://github.com/SizheAn/PanoHead)
+- PanoHead: Geometry-Aware 3D Full-Head Synthesis in 360∘ [CVPR 2023] [Paper](https://arxiv.org/abs/2303.13071) [Repository](https://github.com/SizheAn/PanoHead)
 
-- [AvatarMAV: Fast 3D Head Avatar Reconstruction Using Motion-Aware Neural Voxels](https://arxiv.org/abs/2211.13206)
-  - [Repository](https://github.com/YuelangX/AvatarMAV)
-  - [Project Page](https://liuyebin.com/avatarmav/)
+- AvatarMAV: Fast 3D Head Avatar Reconstruction Using Motion-Aware Neural Voxels [SIGGRAPH 2023] [Paper](https://arxiv.org/abs/2211.13206) [Repository](https://github.com/YuelangX/AvatarMAV)
 
 ### 3.4 3D Editing
 
-- [Next3D: Generative Neural Texture Rasterization for 3D-Aware Head Avatars](https://arxiv.org/abs/2211.11208)
-  - [Repository](https://github.com/MrTornado24/Next3D)
-  - [Project Page](https://mrtornado24.github.io/Next3D/)
+- Next3D: Generative Neural Texture Rasterization for 3D-Aware Head Avatars [CVPR 2023] [Paper](https://arxiv.org/abs/2211.11208) [Repository](https://github.com/MrTornado24/Next3D)
 
 
 ## 4 Supplementary Materials
 
-- [6D Rotation Representation For Unconstrained Head Pose Estimation](https://arxiv.org/abs/2202.12555)
-  - [Official Pytorch Implementation](https://github.com/thohemp/6DRepNet)
+- 6D Rotation Representation For Unconstrained Head Pose Estimation [ICIP 2022] [Paper](https://arxiv.org/abs/2202.12555) [Official Pytorch Implementation](https://github.com/thohemp/6DRepNet)
 
-- [Repository: face-landmark-localization](https://github.com/qiexing/face-landmark-localization)
+- face-landmark-localization [Repository](https://github.com/qiexing/face-landmark-localization)
 
 ---
 
