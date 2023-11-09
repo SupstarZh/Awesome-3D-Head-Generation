@@ -2,7 +2,7 @@
 
 > An awesome list of 3D head&face generation papers, code, datasets and other resources.
 
-> Due to my limited ability, there may be errors and omissions in the following content. If you have any comments, please raise an issue. Thank you for your support.
+> Due to my limited ability, there may be errors and omissions in the following content. If you have any sugguestions, please raise an issue or contact us at 2967525388@qq.com. Thank you for your support.
 
 
 ## 1 Datasets
